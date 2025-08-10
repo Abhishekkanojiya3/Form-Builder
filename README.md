@@ -1,12 +1,61 @@
-# React + Vite
+# Dynamic Form Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based form builder application that allows users to create, preview, and manage dynamic forms with advanced field types and validation rules.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Form Creation**: Add and configure 7 different field types (Text, Number, Textarea, Select, Radio, Checkbox, Date)
+- **Field Configuration**: Set labels, validation rules, default values, and required status
+- **Derived Fields**: Auto-calculated fields based on parent field values (e.g., Age from Date of Birth)
+- **Form Validation**: Real-time validation with custom rules including email format and password strength
+- **Form Management**: Save, view, and manage all created forms
+- **Live Preview**: Test forms exactly as end users would see them
+- **Local Storage**: All data persisted locally, no backend required
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19.1.1** - Frontend framework
+- **Redux Toolkit** - State management
+- **Material-UI (MUI)** - UI component library
+- **React Router DOM** - Client-side routing
+- **Day.js** - Date manipulation
+- **Vite** - Build tool and development server
+- **localStorage** - Data persistence
+
+## Routes
+
+- `/create` - Build new forms with field configuration
+- `/preview` - Preview and test current form
+- `/myforms` - View all saved forms
+
+## Installation
+
+```bash
+npm install
+npm run dev
+```
+
+## Usage
+
+1. **Create Form**: Navigate to `/create` and add fields using the field type selector
+2. **Configure Fields**: Click edit on any field to set validation rules and properties
+3. **Preview Form**: Go to `/preview` to test the form with real validation
+4. **Save Form**: Use the save button to store your form with a custom name
+5. **Manage Forms**: Visit `/myforms` to view, edit, or delete saved forms
+
+## Field Types
+
+- **Text**: Single-line input with email/password validation
+- **Number**: Numeric input with min/max constraints
+- **Textarea**: Multi-line text input
+- **Select**: Dropdown with custom options
+- **Radio**: Single selection with radio buttons
+- **Checkbox**: Boolean toggle
+- **Date**: Date picker for birthdate, events, etc.
+
+## Advanced Features
+
+- **Derived Fields**: Fields that auto-calculate from other fields (Age from DOB, Full Name combination)
+- **Validation Rules**: Email format, password strength, length limits, value ranges
+- **Real-time Updates**: Derived fields update automatically when parent fields change
+- **Form Persistence**: All forms saved to localStorage with creation timestamps
